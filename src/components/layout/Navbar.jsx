@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom"; // 1. Import Link
 import { Layers } from "lucide-react";
 import { ThemeToggle } from "../ui/ThemeToggle";
 import { SignInModal } from "../../features/auth/components/SignInModal.jsx";
@@ -6,38 +7,41 @@ import { SignUpModal } from "../../features/auth/components/SignUpModal.jsx";
 import { motion, AnimatePresence } from "framer-motion";
 
 export function Navbar() {
-  const [activeModal, setActiveModal] = useState(null); // 'signin', 'signup', or null
+  const [activeModal, setActiveModal] = useState(null);
 
   const closeModal = () => setActiveModal(null);
 
-  // Manage body scroll lock centrally
   useEffect(() => {
     if (activeModal) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'unset';
     }
-    
     return () => { document.body.style.overflow = 'unset'; };
   }, [activeModal]);
+
+  // Helper for consistent link styling
+  const linkStyles = "hover:text-violet-600 dark:hover:text-violet-400 transition-colors cursor-pointer";
 
   return (
     <>
       <nav className="absolute top-0 w-full z-40 bg-transparent">
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-          <div className="flex items-center gap-2 font-bold text-lg tracking-wide text-slate-900 dark:text-white">
+          
+          {/* Logo - Wrap in Link to go Home */}
+          <Link to="/" className="flex items-center gap-2 font-bold text-lg tracking-wide text-slate-900 dark:text-white">
             <div className="w-7 h-7 bg-violet-600 rounded flex items-center justify-center text-white">
               <Layers size={16} fill="currentColor" />
             </div>
             <span>NexType</span>
-          </div>
+          </Link>
 
-          <div className="hidden md:flex gap-8 text-xs font-semibold tracking-wider text-slate-500 dark:text-slate-400">
-            {['HOME', 'TOOLS', 'HELP', 'ABOUT US'].map((item) => (
-              <a key={item} href="#" className="hover:text-violet-600 dark:hover:text-violet-400 transition-colors">
-                {item}
-              </a>
-            ))}
+          {/* Desktop Navigation Links */}
+          <div className="hidden md:flex gap-8 text-xs font-semibold tracking-wider text-slate-500 dark:text-slate-400 uppercase">
+            <Link to="/" className={linkStyles}>Home</Link>
+            <a href="#tools" className={linkStyles}>Tools</a>
+            <a href="#help" className={linkStyles}>Help</a>
+            <Link to="/about" className={linkStyles}>About Us</Link>
           </div>
 
           <div className="flex items-center gap-4">
@@ -62,8 +66,6 @@ export function Navbar() {
       <AnimatePresence>
         {activeModal && (
           <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
-            
-            {/* The single, shared backdrop */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -72,7 +74,6 @@ export function Navbar() {
               className="absolute inset-0 bg-slate-900/40 dark:bg-black/60 backdrop-blur-sm"
             />
 
-            {/* Smooth Form Swapping inside the backdrop */}
             <AnimatePresence mode="wait">
               {activeModal === 'signin' && (
                 <SignInModal 
@@ -89,7 +90,6 @@ export function Navbar() {
                 />
               )}
             </AnimatePresence>
-            
           </div>
         )}
       </AnimatePresence>
