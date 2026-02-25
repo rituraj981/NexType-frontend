@@ -1,4 +1,12 @@
-import { useState, useEffect } from "react";
+/**
+ * @project     NexType - Modern File Converter
+ * @author      Rituraj981 (https://github.com/rituraj981)
+ * @copyright   2026 Rituraj981
+ * @license     MIT
+ * @description Decoupled Full-stack React/Django application for secure file conversion.
+ */
+
+mport { useState, useEffect } from "react";
 import { Link } from "react-router-dom"; // 1. Import Link
 import { Layers } from "lucide-react";
 import { ThemeToggle } from "../ui/ThemeToggle";

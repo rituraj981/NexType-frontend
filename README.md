@@ -21,6 +21,10 @@ If you are developing a production application, we recommend using TypeScript wi
 
 NexType is a high-performance, modern web application designed for seamless file conversion. Built with React and powered by Vite, it offers a sleek, dark-mode-first user experience with fluid animations.
 
+**Developed by [Rituraj981](https://github.com/rituraj981)** *Built with React 19, Tailwind CSS v4, and Django REST Framework.*
+
+## 📜 License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🚀 Tech Stack
 - **Framework:** React 19 (Vite)

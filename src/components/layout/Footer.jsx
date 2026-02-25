@@ -1,25 +1,48 @@
 import { Layers } from "lucide-react";
 
+/**
+ * NexType Project Footer
+ * @author: rituraj981
+ */
 export function Footer() {
   return (
-    <footer className="border-t border-slate-200 dark:border-slate-800 py-8 px-6 mt-20">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-xs font-medium text-slate-500 dark:text-slate-500">
+    <footer className="border-t border-slate-200 dark:border-slate-800 py-12 px-6 mt-20">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8 text-xs font-medium text-slate-500">
         
+        {/* Brand Logo */}
         <div className="flex items-center gap-2 font-bold text-slate-900 dark:text-white text-sm">
-          <Layers size={14} className="text-violet-500" />
-          <span>FILECONV</span>
+          <div className="w-6 h-6 bg-violet-600 rounded flex items-center justify-center text-white">
+            <Layers size={12} fill="currentColor" />
+          </div>
+          <span className="tracking-widest uppercase">NexType</span>
         </div>
 
-        <div className="flex gap-6">
-          <a href="#" className="hover:text-slate-900 dark:hover:text-slate-300">Terms</a>
-          <a href="#" className="hover:text-slate-900 dark:hover:text-slate-300">Privacy</a>
-          <a href="#" className="hover:text-slate-900 dark:hover:text-slate-300">Status</a>
-          <a href="#" className="hover:text-slate-900 dark:hover:text-slate-300">Contact</a>
+        {/* Footer Navigation */}
+        <div className="flex gap-8">
+          <a href="#" className="hover:text-violet-500 dark:hover:text-violet-400 transition-colors">Terms</a>
+          <a href="#" className="hover:text-violet-500 dark:hover:text-violet-400 transition-colors">Privacy</a>
+          <a href="#" className="hover:text-violet-500 dark:hover:text-violet-400 transition-colors">Status</a>
+          <a href="#" className="hover:text-violet-500 dark:hover:text-violet-400 transition-colors">Contact</a>
         </div>
 
-        <div>
-          © 2024 NexType Project. Released under MIT.
+        {/* Ownership & Copyright */}
+        <div className="text-center md:text-right space-y-1">
+          <p className="text-slate-400">
+            © 2026 NexType. Released under MIT.
+          </p>
+          <p className="text-slate-500">
+            Designed and Developed by 
+            <a 
+              href="https://github.com/rituraj981" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-violet-500 font-bold hover:underline ml-1"
+            >
+              rituraj981
+            </a>
+          </p>
         </div>
+
       </div>
     </footer>
   );

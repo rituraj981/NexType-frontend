@@ -1,8 +1,21 @@
 {
   "name": "nextype-frontend",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "license": "MIT",
   "type": "module",
+  "author": {
+    "name": "Rituraj981",
+    "url": "https://github.com/rituraj981"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rituraj981/NexType-frontend"
+  },
+  "bugs": {
+    "url": "https://github.com/rituraj981/NexType-frontend/issues"
+  },
+  "homepage": "https://github.com/rituraj981/NexType-frontend#readme",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
