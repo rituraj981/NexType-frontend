@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+/* 1. Tell Tailwind v4 to use the class strategy for dark mode */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* THIS IS THE MAGIC FIX */
+html {
+  scrollbar-gutter: stable;
+}
+
+@theme {
+  /* Define your brand colors directly here */
+  --color-primary: #8b5cf6;
+  --color-primary-hover: #7c3aed;
+  
+  /* You can extend other utilities here too */
+  --animate-float: float 3s ease-in-out infinite;
+}
+
+/* Custom Keyframes */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+/* Base theme variables */
+:root {
+  --background: 255 255 255; 
+  --foreground: 15 23 42; 
+}
+
+/* Dark theme variables */
+.dark {
+  --background: 2 6 23; /* darker slate */
+  --foreground: 248 250 252;
+}
