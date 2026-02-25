@@ -6,7 +6,7 @@
  * @description Decoupled Full-stack React/Django application for secure file conversion.
  */
 
-mport { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom"; // 1. Import Link
 import { Layers } from "lucide-react";
 import { ThemeToggle } from "../ui/ThemeToggle";
