@@ -36,7 +36,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 3. Run the development server:
 
     ```Bash
-  npm run dev
+    npm run dev
 
 4. Build for production:
 
